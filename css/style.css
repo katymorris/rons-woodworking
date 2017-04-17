@@ -1,0 +1,198 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*----------------FONTS--------------*/
+/*----------------------------------*/
+@font-face {
+    font-family: "Lane";
+    src: url('../fonts/lane.ttf');
+}
+@font-face {
+    font-family: "Tug";
+    src: url('../fonts/Tugano.otf');
+}
+/*----------------MAIN--------------*/
+/*----------------------------------*/
+body {
+	line-height: 1.5em;
+	font-family: "Lane";
+}
+p {
+	margin-top: 15px;
+}
+.loading-screen {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+	background-color: white;
+}
+.loading-wrench {
+	position: absolute;
+	margin-top: -29px;
+	margin-left: -32px;
+	left: 50%;
+	top: 50%;
+	color: #48280b;
+
+	-webkit-animation: fa-spin .7s infinite linearr;
+    -moz-animation: fa-spin .7s infinite linear;
+    -ms-animation: fa-spin .7s infinite linear;
+    -o-animation: fa-spin .7s infinite linear;
+    animation: fa-spin .7s infinite linear;
+}
+.overlay {
+	background-color: #847159;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    z-index: 2;
+}
+.header-wrapper {
+	overflow: hidden;
+}
+	.header-wrapper img {
+		animation: kenburns 20s infinite;
+	}
+	@keyframes kenburns {
+    95% {
+        transform: scale3d(1.5, 1.5, 1.5) translate3d(-190px, -120px, 0px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+}
+.header-image {	
+    width: 100%;
+}
+.main-title {
+	position: absolute;
+	font-family: "Tug";
+	color: white;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -219px;
+	font-size: 50px;
+	z-index: 3;
+}
+.main-wrapper {
+	width: 100%;
+}
+.main-container {
+	width: 1170px;
+	margin: 0 auto;
+}
+.section-container {
+	text-align: center;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #c7c7c7;
+}
+.section-icon {
+	margin-top: 100px;
+	color: #48280b;
+}
+.section-title {
+	font-family: "Tug";
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+.product-container {
+	margin: 0 auto;
+}
+.product-box {
+	position: relative;
+	margin-bottom: 10px;
+	border: 1px solid #c7c7c7;
+	cursor: pointer;
+}
+.product-box-1 {
+	background-image: url("../images/photo-1.jpg");
+	width: 255px;
+	height: 400px;
+}
+.product-box-2 {
+	background-image: url("../images/photo-2.jpg");
+	width: 250px;
+	height: 188px;
+}
+.product-box-3 {
+	background-image: url("../images/photo-3.jpg");
+	width: 250px;
+	height: 141px;
+}
+.product-box-4 {
+	background-image: url("../images/photo-4.jpg");
+	width: 258px;
+	height: 340px;
+}
+.product-box-5 {
+	background-image: url("../images/photo-5.jpg");
+	width: 240px;
+	height: 320px;
+}
+.product-overlay {
+	display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #381c07;
+	z-index: 1;
+	opacity: 0;
+}
+.product-info {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 20px;
+	color: white;
+	opacity: 0;
+	z-index: 2;
+}
