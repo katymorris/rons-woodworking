@@ -85,6 +85,7 @@ p {
     -ms-animation: fa-spin .7s infinite linear;
     -o-animation: fa-spin .7s infinite linear;
     animation: fa-spin .7s infinite linear;
+    z-index: 1;
 }
 .overlay {
 	background-color: #847159;
@@ -96,17 +97,58 @@ p {
 }
 .header-wrapper {
 	overflow: hidden;
+	background-image: url('images/construction-work-carpenter-tools.jpg');
+	background-repeat: no-repeat;
+	background-size: 200%;
+	animation: panning 50s infinite linear;
 }
-	.header-wrapper img {
-		animation: kenburns 20s infinite;
+	@keyframes panning {
+	  0% {
+	    background-position: 0% 0%;
+	  }
+	  25% {
+	    background-position: 100% 100%;
+	  }
+	   50% {
+	    background-position: 100% 0%;
+	  }
+	  75% {
+	    background-position: 0 100%;
+	  }
+	  200% {
+	    background-position: 0 0;
+	  }
+}
+.scroll-arrow {
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	margin-left: -25px;
+	margin-top: -20px;
+	border: 1px solid whitesmoke;
+	height: 40px;
+    width: 50px;
+    z-index: 4;
+    cursor: pointer;
+}
+	.arrow-line-container {
+		position: relative;
 	}
-	@keyframes kenburns {
-    95% {
-        transform: scale3d(1.5, 1.5, 1.5) translate3d(-190px, -120px, 0px);
-        animation-timing-function: ease-in;
-        opacity: 1;
-    }
-}
+		.arrow-line {
+			position: absolute;
+			width: 1px;
+			height: 30px;
+			background-color: whitesmoke;
+			top: 8px;
+		}
+		.line-1 {
+			left: 16px;
+			transform: rotate(-35deg);
+		}
+		.line-2 {
+			right: 16px;
+			transform: rotate(35deg);
+		}
 .header-image {	
     width: 100%;
 }
@@ -119,7 +161,7 @@ p {
 	margin-top: -25px;
 	margin-left: -219px;
 	font-size: 50px;
-	z-index: 3;
+	z-index: 2;
 }
 .main-wrapper {
 	width: 100%;
@@ -133,9 +175,12 @@ p {
 	padding-bottom: 50px;
 	border-bottom: 1px solid #c7c7c7;
 }
-.section-icon {
+.section-icon, .section-icon-mobile {
 	margin-top: 100px;
 	color: #48280b;
+}
+.section-icon-mobile {
+	display: none !important;
 }
 .section-title {
 	font-family: "Tug";
@@ -195,4 +240,61 @@ p {
 	color: white;
 	opacity: 0;
 	z-index: 2;
+}
+/* ---------- RETINA QUERIES ---------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+
+	
+}
+
+/* ---------- MEDIA QUERIES ---------- */ 
+
+@media (max-width: 1200px) {
+	.container {
+		width: 980px;
+	 }
+}
+@media (max-width: 980px) {
+  	.container {
+    	width: 768px;
+  	}
+
+}
+@media (max-width: 767px) {
+  	.container {
+	    box-sizing: border-box;
+	    width: 100%;
+	    padding: 0 15px;
+ 	}
+ 	.header-wrapper {
+ 		background-size: cover;
+		animation: none;
+ 	}
+ 	.main-title {
+ 		font-size: 35px;
+ 		margin-left: -153px;
+ 		margin-top: -12px;
+ 	}
+ 	.section-title {
+ 		font-size: 25px;
+ 	}
+ 	.section-icon-mobile {
+		display: inline-block !important;
+	}
+	.section-icon {
+		display: none !important;
+	}
+
+}
+@media (max-width: 480px) {
+	.container {
+		width: 100%;
+	    padding: 0 15px;
+	}
 }
